@@ -1,0 +1,81 @@
+# EthioMart NER Pipeline Configuration
+
+# Model Configuration
+model:
+  name: "bert-base-multilingual-cased"
+  max_length: 512
+  batch_size: 16
+  learning_rate: 2e-5
+  num_epochs: 10
+  warmup_steps: 500
+  weight_decay: 0.01
+
+# Data Configuration
+data:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  train_split: 0.7
+  val_split: 0.15
+  test_split: 0.15
+
+# NER Labels
+labels:
+  - "O"
+  - "B-PRICE"
+  - "I-PRICE"
+  - "B-PHONE"
+  - "I-PHONE"
+  - "B-LOCATION"
+  - "I-LOCATION"
+  - "B-PRODUCT"
+  - "I-PRODUCT"
+
+# Telegram Configuration
+telegram:
+  channels:
+    - "ethiopian_marketplace"
+    - "addis_deals"
+    - "ethio_shopping"
+  limit_per_channel: 1000
+  days_back: 30
+
+# E-commerce Keywords (Amharic)
+ecommerce_keywords:
+  amharic:
+    - "ሽያጭ"
+    - "ግዛ"
+    - "ዋጋ"
+    - "ቅናሽ"
+    - "አዲስ"
+    - "ተጠቃሚ"
+    - "ድምጽ"
+  english:
+    - "sale"
+    - "buy"
+    - "price"
+    - "discount"
+    - "new"
+    - "used"
+    - "offer"
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  file: "logs/ethiomart_ner.log"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+# Output Configuration
+output:
+  models_dir: "models"
+  results_dir: "outputs"
+  checkpoints_dir: "checkpoints"
+
+# Evaluation Configuration
+evaluation:
+  metrics:
+    - "f1_score"
+    - "precision"
+    - "recall"
+    - "accuracy"
+  save_predictions: true
+  confusion_matrix: true 
