@@ -191,9 +191,11 @@ python -c "from src.vendor.analytics_engine import EnhancedVendorAnalytics; anal
 ## 📊 Output Files
 
 ### Data Files
-- `data/raw/telegram_comprehensive_*.json` - Raw scraped data
-- `data/processed/ner_data_*_*.json` - Preprocessed data splits
-- `data/labelled/ner_dataset.conll` - CONLL format dataset
+- `data/raw/telegram_comprehensive_*.json` - Raw scraped data from Telegram channels
+- `data/processed/ner_data_*_*.json` - Preprocessed and cleaned data splits (train/val/test)
+- `data/labelled/ner_dataset.conll` - CONLL format dataset for NER training
+- `data/interim/annotated_samples.json` - Manually annotated sample data
+- `data/external/amharic_ner_benchmarks.json` - External benchmark datasets
 
 ### Models
 - `models/xlm-roberta-base_*/` - Trained model checkpoints
