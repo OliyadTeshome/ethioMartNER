@@ -157,4 +157,9 @@ logs/
 outputs/
 checkpoints/
 wandb/
-mlruns/ 
+mlruns/
+data/raw/photos/
+Reports/Interim.md
+
+# Add any other project-specific settings here
+# ... 
